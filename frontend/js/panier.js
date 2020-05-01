@@ -157,21 +157,20 @@ let adresse = document.getElementById('address');
 let ville = document.getElementById('city');
 let email = document.getElementById('email');
 
+valid.addEventListener('submit', validerForm);
+
 function validerForm(event) {
   console.log('ok');
-
+  
   var form_OK = true;
-
+  
   if(prenom.value == "" || nom.value == "" || adresse.value == "" || ville.value == "" || email.value == "") {
     var form_OK = false; 
   }
-
   if(!form_OK){
   event.preventDefault();
+  } else {
+    achat();
   };
-  achat();
 };
-
-valid.addEventListener('submit', validerForm);
-
 affichagePanier();
